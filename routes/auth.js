@@ -11,16 +11,17 @@ console.log("this is working")
   res.render('auth/signup.hbs')
 
 })
-/*
+
+
 router.post("/signup", (req, res, next) => {
-  // console.log("The form data: ", req.body);
+  console.log("The form data: ", req.body);
 
-  const { fullName, email, password } = req.body;
+  const { email, password } = req.body;
 
-  if (!fullName || !email || !password) {
+  if (!email || !password) {
     res.render("auth/signup.hbs", {
       errorMessage:
-        "All fields are mandatory. Please provide your username, email and password.",
+        "All fields are mandatory. Please provide your email and password.",
     });
     return;
   }
@@ -34,8 +35,8 @@ router.post("/signup", (req, res, next) => {
           .genSalt(saltRounds)
           .then((salt) => bcryptjs.hash(password, salt))
           .then((hashedPassword) => {
+            console.log("This is the hashed password ==>", hashedPassword)
             return User.create({
-              fullName,
               email,
               password: hashedPassword,
             });
@@ -44,7 +45,7 @@ router.post("/signup", (req, res, next) => {
             console.log("Newly created user is: ", createdUser);
             req.session.user = createdUser;
             console.log("Session after signup ===>", req.session)
-            res.redirect('/users/profile')
+            res.redirect('/user/profile')
           })
           .catch((error) => {
             console.log(error);
@@ -52,7 +53,7 @@ router.post("/signup", (req, res, next) => {
           });
       } else {
         res.render("auth/signup.hbs", {
-          errorMessage: "Email or username already taken.",
+          errorMessage: "Email already taken.",
         });
         return;
       }
@@ -75,13 +76,16 @@ router.get("/login", (req, res, next) => {
 
 })
 
+
 router.post('/login', (req, res, next) => {
   console.log('SESSION =====> ', req.session);
   const { email, password } = req.body;
 
+  const validationError = 'Email not found and/or incorrect password.'
+
   if (email === '' || password === '') {
     res.render('auth/login', {
-      errorMessage: 'Please enter both email and password to login.'
+      errorMessage: 'Please enter your email or password to login.'
     });
     return;
   }
@@ -90,27 +94,27 @@ router.post('/login', (req, res, next) => {
     .then(user => {
       if (!user) {
         console.log("Email not registered. ");
-        res.render('auth/login', { errorMessage: 'User not found and/or incorrect password.' });
+        res.render('auth/login', { errorMessage: validationError });
         return;
       } else if (bcryptjs.compareSync(password, user.password)) {
 
           req.session.user = user
           console.log("Session after success ===>", req.session)
 
-          res.redirect('/users/profile')
+          res.redirect('/user/profile')
       } else {
         console.log("Incorrect password. ");
-        res.render('auth/login.hbs', { errorMessage: 'User not found and/or incorrect password.' });
+        res.render('auth/login.hbs', { errorMessage: validationError });
       }
     })
     .catch(error => next(error));
 });
 
-router.get('/logout', (req, res, next) => {
-  req.session.destroy(err => {
-    if (err) next(err);
+router.post('/logout', (req, res, next) => {
+  // req.session.destroy(err => {
+    // if (err) next(err);
     res.redirect('/');
-  });
+  // });
 });
-*/
+
 module.exports = router;
