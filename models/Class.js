@@ -6,7 +6,7 @@ const classSchema = new Schema(
       videoCreator: String,
       videoImg: String,
       videoURL: String,
-      comments: [],
+      comments: [{type: Schema.Types.ObjectId, ref: "Comment"}],
   },
   {
       timestamps: true,
@@ -14,5 +14,3 @@ const classSchema = new Schema(
 );
 
 module.exports = model('Class', classSchema);
-
-//{type: Schema.Types.ObjectId, ref: "Comment"}
