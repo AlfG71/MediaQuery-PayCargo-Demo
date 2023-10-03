@@ -10,6 +10,18 @@ router.get('/profile', (req, res) => {
 
 });
 
+router.get('/update-profile', (req, res, next) => {
+
+  res.render('user/update-profile')
+
+})
+
+router.post('/update', (req, res, next) => { // unfinished request
+  const { email, password } = req.body
+
+  User.findByIdAndUpdate()
+})
+
 
 
 module.exports = router;

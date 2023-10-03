@@ -1,0 +1,20 @@
+<div id="form">
+  <h2>Update personal information</h2>
+  <form action="/user/update" method="POST">
+
+    <label> Email
+      <input type="text" name="email" placeholder="New email" />
+    </label>
+
+    <label> Password
+      <input type="password" name="password" placeholder="New password" />
+    </label>
+
+    <button type="submit">Submit changes</button>
+
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
+
+  </form>
+</div>

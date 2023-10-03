@@ -1,1 +1,35 @@
-<h2>Profile Page</h2>
+
+{{#if user}}
+  <h2>Welcome, {{ user.firstName }} {{ user.lastName }}!</h2>
+  <img>
+  <button>
+    <a href="">Add picture</a>
+  </button>
+
+  <button>
+    <a href="/user/update-profile">Update account information</a>
+  </button>
+
+  <button>
+    <a href="">Sign out</a>
+  </button>
+
+  <button>
+    <a href="">Delete account</a>
+  </button>
+
+{{else}}
+  <p>Still no logged in user, sorry!</p>
+{{/if}}
+
+
+
+{{!-- Placeholder for profile picture
+Add profile picture
+Name
+Email
+Password
+Update
+Delete
+Edit
+ --}}
