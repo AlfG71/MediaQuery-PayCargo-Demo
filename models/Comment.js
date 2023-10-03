@@ -3,7 +3,6 @@ const { Schema, model } = require('mongoose');
 const commentSchema = new Schema(
   {
       comment: String,
-      date: Date,
       author: { type: Schema.Types.ObjectId, ref: "User" }
   },
   {
