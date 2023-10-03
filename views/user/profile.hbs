@@ -1,22 +1,38 @@
 
 {{#if user}}
-  <h2>Welcome, {{ user.firstName }} {{ user.lastName }}!</h2>
+  <h2>Your Profile</h2>
+  <hr>
+
+  <h4>{{user.firstName}} {{user.lastName}}</h4>
   <img>
   <button>
-    <a href="">Add picture</a>
+    <a href="">Change picture</a>
+  </button>
+  <button>
+    <a href="">Change name</a>
   </button>
 
+<hr>
+
+<h4>Login Details</h4>
+<p>Your email is: {{user.email}}</p>
   <button>
-    <a href="/user/update-profile">Update account information</a>
+    <a href="/user/update-profile">Change email</a>
+  </button>
+  <button>
+    <a href="/user/update-profile">Change password</a>
   </button>
 
+<hr>
+<br>
   <button>
-    <a href="">Sign out</a>
+    <a href="">Confirm changes</a>
   </button>
 
   <button>
     <a href="">Delete account</a>
   </button>
+
 
 {{else}}
   <p>Still no logged in user, sorry!</p>
