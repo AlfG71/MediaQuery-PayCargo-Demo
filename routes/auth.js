@@ -103,7 +103,7 @@ router.post('/login', (req, res, next) => {
           req.session.user = user
           console.log("Session after success ===>", req.session)
 
-          res.redirect('/user/profile')
+          res.redirect('/')
       } else {
         console.log("Incorrect password. ");
         res.render('auth/login.hbs', { errorMessage: validationError });
