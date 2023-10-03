@@ -7,7 +7,7 @@ const saltRounds = 10;
 const User = require('../models/User')
 
 router.get('/signup', (req, res, next) => {
-console.log("this is working")
+// console.log("this is working")
   res.render('auth/signup.hbs')
 
 })
@@ -16,12 +16,12 @@ console.log("this is working")
 router.post("/signup", (req, res, next) => {
   console.log("The form data: ", req.body);
 
-  const { email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
 
-  if (!email || !password) {
+  if (!email || !password || !firstName || !lastName) {
     res.render("auth/signup.hbs", {
       errorMessage:
-        "All fields are mandatory. Please provide your email and password.",
+        "All fields are mandatory. Please provide your email, first name, last name, and password.",
     });
     return;
   }
@@ -37,6 +37,8 @@ router.post("/signup", (req, res, next) => {
           .then((hashedPassword) => {
             console.log("This is the hashed password ==>", hashedPassword)
             return User.create({
+              firstName,
+              lastName,
               email,
               password: hashedPassword,
             });
@@ -116,5 +118,11 @@ router.post('/logout', (req, res, next) => {
     res.redirect('/');
   // });
 });
+
+// router.post('/update', (req, res, next) => { // unfinished request
+//   const { firstName, lastName, email, password } = req.body
+
+//   User.findByIdAndUpdate()
+// })
 
 module.exports = router;
