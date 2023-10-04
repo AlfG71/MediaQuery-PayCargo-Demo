@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const Class = require('../models/Class')
+// const Class = require('../models/Class')
 
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
@@ -48,9 +48,9 @@ router.post("/signup", (req, res, next) => {
           console.log("Newly created user is: ", createdUser);
           req.session.user = createdUser;
           console.log("Session after signup ===>", req.session)
-          
+
           res.redirect('class/all-classes')
-          
+
         })
         .catch((error) => {
           console.log(error);
@@ -68,27 +68,27 @@ router.post("/signup", (req, res, next) => {
       next(error);
     });
   });
-  
+
   //INDEX PAGE = LOGIN PAGE
   router.get("/", (req, res, next) => {
-  
+
     res.render("auth/login.hbs")
-  
+
   })
-  
+
   router.post('/', (req, res, next) => {
     console.log('SESSION =====> ', req.session);
     const { email, password } = req.body;
-  
+
     const validationError = 'Email not found and/or incorrect password.'
-  
+
     if (email === '' || password === '') {
       res.render('auth/login.hbs', {
         errorMessage: 'Please enter your email or password to login.'
       });
       return;
     }
-  
+
     User.findOne({ email })
       .then(user => {
         if (!user) {
@@ -96,10 +96,10 @@ router.post("/signup", (req, res, next) => {
           res.render('auth/login.hbs', { errorMessage: validationError });
           return;
         } else if (bcryptjs.compareSync(password, user.password)) {
-  
+
             req.session.user = user
             console.log("Session after success ===>", req.session)
-  
+
             res.redirect('class/all-classes')
         } else {
           console.log("Incorrect password. ");
@@ -108,10 +108,10 @@ router.post("/signup", (req, res, next) => {
       })
       .catch(error => next(error));
   });
-  
+
 //PROFILE PAGE
 router.get('/profile', (req, res, next) => {
-  
+
   res.render('user/profile.hbs', req.session.user)
 
 })
