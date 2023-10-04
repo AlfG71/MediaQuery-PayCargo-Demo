@@ -4,11 +4,19 @@
 
     <div>
 
-        <h3>{{name}}</h3>
+        <h3>{{title}}</h3>
+        <h2>{{videoImg}}</h2>
         <div id="grid-container">
         <img src='https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2021-04/istockphoto-1210929329-crop.jpg' alt="class">
 
         {{!-- <a href="/class/single-class/{{_id}}">see class details</a> --}}
+        /*
+    title: String,
+      videoCreator: String,
+      videoImg: String,
+      videoURL: String,
+      comments: [{type: Schema.Types.ObjectId, ref: "Comment"}],
+        */
 
     </div>
 
