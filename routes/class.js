@@ -7,7 +7,7 @@ router.get('/all-classes', (req, res, next) => {
 
     Class.find()
     .then((classes) => {
-        console.log("Found classes ===>", classes)
+        // console.log("Found classes ===>", classes)
         res.render('class/all-classes.hbs', { classes })
     })
     .catch((err) => {

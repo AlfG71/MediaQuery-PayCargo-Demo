@@ -49,7 +49,7 @@ router.post("/signup", (req, res, next) => {
           req.session.user = createdUser;
           console.log("Session after signup ===>", req.session)
 
-          res.redirect('class/all-classes')
+          res.redirect('/class/all-classes')
 
         })
         .catch((error) => {
@@ -100,7 +100,7 @@ router.post("/signup", (req, res, next) => {
             req.session.user = user
             console.log("Session after success ===>", req.session)
 
-            res.redirect('class/all-classes')
+            res.redirect('/class/all-classes')
         } else {
           console.log("Incorrect password. ");
           res.render('auth/login.hbs', { errorMessage: validationError });
