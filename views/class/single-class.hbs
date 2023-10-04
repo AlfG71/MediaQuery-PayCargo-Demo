@@ -1,0 +1,38 @@
+    <div>
+
+        <h3>{{class.name}}</h3>
+        <img src={{class.imageUrl}} alt="class">
+        <p>{{class.description}}</p>
+        <p>added by: {{class.owner.fullName}}</p>
+
+        <a href="/class/all">Back to All Rooms</a>
+
+        <hr>
+
+        {{#unless canEdit}}
+
+            <h4>Leave a comment</h4>
+            <form id="review" action="/comment/new/{{user._id}}" method="post">
+                <label for="review">Comment:</label>
+                <input type="text" name="comment" id="review">
+                <button type="submit">Create Comment</button>
+            </form>
+
+        {{/unless}}
+
+
+        {{#if reviews}}
+
+            {{#each reviews}}
+
+                <p>{{comment}}</p>
+                <h6>- {{user.fullName}}</h6>
+
+            {{/each}}
+
+            {{else}}
+
+            <p>No comments yet</p>
+
+        {{/if}}
+    </div>

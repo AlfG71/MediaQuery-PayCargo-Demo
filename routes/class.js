@@ -23,4 +23,8 @@ router.get('/all', (req, res, next) => {
 
 })
 
+router.get('/single-class', (req, res, next) =>{
+  res.render('class/single-class.hbs')
+})
+
 module.exports = router;
