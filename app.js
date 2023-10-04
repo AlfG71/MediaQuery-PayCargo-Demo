@@ -11,7 +11,7 @@ var MongoStore = require('connect-mongo');
 // var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var authRouter = require('./routes/auth');
-var classRouter = require('./routes/class-detail');
+var classRouter = require('./routes/class');
 
 var app = express();
 
