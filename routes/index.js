@@ -7,11 +7,13 @@ const Class = require('../models/Class')
 
 /* GET login page for home page. */
 
-// router.get('/', (req, res, next) => {
-  
-//   res.render('auth/login.hbs')
+router.get('/', (req, res, next) => {
 
-// })
+  res.render('auth/login.hbs')
+
+})
+//add IsLoggedIn middleware: true: redirect to all-classes, false: render of login page
+
 
 // router.get('/', function(req, res, next) {
 //   Class.find()
