@@ -8,10 +8,10 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo');
 
-var indexRouter = require('./routes/index');
+// var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var authRouter = require('./routes/auth');
-var classRouter = require('./routes/class');
+var classRouter = require('./routes/class-detail');
 
 var app = express();
 
@@ -33,7 +33,7 @@ app.use(
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       secure: process.env.NODE_ENV === 'production',
       httpOnly: true,
-      maxAge: 60000 // 60 * 1000 ms === 1 min
+      maxAge: 600000 // 60 * 1000 ms === 1 min x 10 = 10min
     }, // ADDED code below !!!
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI
@@ -50,7 +50,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
+app.use('/', authRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/class', classRouter);

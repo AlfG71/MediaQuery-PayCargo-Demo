@@ -5,28 +5,41 @@
 
   <h4>{{user.firstName}} {{user.lastName}}</h4>
   <img>
-  <button>
-    <a href="">Change picture</a>
-  </button>
-  <button>
-    <a href="">Change name</a>
-  </button>
+
+<button onclick="nameFunction()">Change name</button>
+
+<script>
+function nameFunction() {
+    let newFirstName = prompt("First name:")
+    let newLastName = prompt("Last name:");
+}
+</script>
 
 <hr>
 
 <h4>Login Details</h4>
 <p>Your email is: {{user.email}}</p>
-  <button>
-    <a href="/user/update-profile">Change email</a>
-  </button>
-  <button>
-    <a href="/user/update-profile">Change password</a>
-  </button>
+
+<button onclick="emailFunction()">Change email</button>
+
+<script>
+function emailFunction() {
+    let newEmail = prompt("Please enter new email:")
+    {{!-- user.email = newEmail  --}}
+}
+</script>
+
+<button onclick="passwordFunction()">Change password</button>
+<script>
+function passwordFunction() {
+    let newPassword = prompt("Please enter new password:")
+}
+</script>
 
 <hr>
 <br>
   <button>
-    <a href="">Confirm changes</a>
+    <a href="/class/all-classes">Confirm changes</a>
   </button>
 
   <button>
@@ -49,3 +62,17 @@ Update
 Delete
 Edit
  --}}
+
+  {{!-- <button>
+    <a href="">Change picture</a>
+  </button>
+  <button>
+    <a href="">Change name</a>
+  </button> --}}
+
+  {{!-- <button>
+    <a href="/user/update-profile">Change email</a>
+  </button>
+  <button>
+    <a href="/user/update-profile">Change password</a>
+  </button> --}}

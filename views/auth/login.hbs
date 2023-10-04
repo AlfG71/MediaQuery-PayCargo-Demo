@@ -1,5 +1,7 @@
+{{!-- Login page is the home/index page --}}
+
 <div id="form">
-  <h2>Login</h2>
+  <h2>Level up your business with our financial education platform</h2>
 
   <form action="/auth/login" method="POST">
 
@@ -12,6 +14,8 @@
     </label>
 
     <button type="submit">Login</button>
+
+    <a href = "/auth/signup" ><h4>or<br>Create Account<br></h4></a>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
