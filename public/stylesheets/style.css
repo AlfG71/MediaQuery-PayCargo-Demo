@@ -1,8 +1,26 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aliceblue;
 }
 
 a {
-  color: #00B7FF;
+  background: linear-gradient(126deg, #473BF0 30.73%, #0094D9 86.27%);
 }
+
+#grid-container {
+  position: fixed;
+  left: 30%;
+  top: 20%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  gap: 10px; /* Optional: spacing between grid items */
+}
+
+#grid-container img {
+  width: 100%;
+  border: 2px solid blue;
+  border-radius: 10px;
+  height: auto; /* Maintains the image's aspect ratio */
+}
+
