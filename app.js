@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var hbs = require('hbs')
+
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo');
@@ -12,12 +14,18 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var authRouter = require('./routes/auth');
 var classRouter = require('./routes/class');
+var commentRouter = require('./routes/comment');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerHelper('deletePrompt', () => {
+  console.log("Hitting BUTTON ************")
+window.prompt("Are you sure?")
+})
 
 
 app.set('trust proxy', 1);
@@ -54,6 +62,7 @@ app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/class', classRouter);
+app.use('/comment', commentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
