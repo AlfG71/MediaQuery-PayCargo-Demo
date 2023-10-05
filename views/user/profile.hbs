@@ -3,49 +3,34 @@
   <h2>Your Profile</h2>
   <hr>
 
-  <h4>{{user.firstName}} {{user.lastName}}</h4>
-  <img>
+  <h4>{{user.fullName}} </h4>
+  <img src={{user.imageurl}} alt="user">
 
-<button onclick="nameFunction()">Change name</button>
+{{!-- <button onclick="nameFunction()">Change name</button>
 
 <script>
 function nameFunction() {
     let newFirstName = prompt("First name:")
     let newLastName = prompt("Last name:");
 }
-</script>
+</script> --}}
 
 <hr>
 
 <h4>Login Details</h4>
 <p>Your email is: {{user.email}}</p>
 
-<button onclick="emailFunction()">Change email</button>
 
-<script>
-function emailFunction() {
-    let newEmail = prompt("Please enter new email:")
-    console.log("This is sesssion ==>", req.session)
-    {{!-- user.email = newEmail  --}}
-}
-</script>
-
-<button onclick="passwordFunction()">Change password</button>
-<script>
-function passwordFunction() {
-    let newPassword = prompt("Please enter new password:")
-}
-</script>
 
 <hr>
 <br>
-  <button>
+  {{!-- <button>
     <a href="/class/all-classes">Confirm changes</a>
-  </button>
-
-  <button>
+  </button> --}}
+<a href="/user/update-profile">edit profile</a>
+  {{!-- <button>
     <a href="">Delete account</a>
-  </button>
+  </button> --}}
 
 
 {{else}}
