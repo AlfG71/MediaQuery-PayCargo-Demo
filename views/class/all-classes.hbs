@@ -1,23 +1,23 @@
 <h2>All Classes</h2>
 
-{{#each classes}}
+    {{#each classes}}
 
-    <div>
-
-
-        <h3>{{title}}</h3>
-        {{!-- <img src="" alt=""> --}}
-        <h2>{{videoImg}}</h2>
-        <img src='https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2021-04/istockphoto-1210929329-crop.jpg' alt="class">
-        <form action="/class/single-class/{{_id}}" method="POST">
-            <button type="submit">Learn</button>
-        </form>
-
-        <div id="grid-container"></div>
+        <div>
 
 
-        {{!-- <a href="/class/single-class/{{_id}}">see class details</a> --}}
-        </div>
+            <h3>{{title}}</h3>
+            {{!-- <img src="" alt=""> --}}
+            <h2>{{videoImg}}</h2>
+            <img src='https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2021-04/istockphoto-1210929329-crop.jpg' alt="class">
+            <form action="/class/single-class/{{_id}}" method="POST">
+                <button type="submit">Learn</button>
+            </form>
+
+            <div id="grid-container"></div>
 
 
-{{/each}}
+            {{!-- <a href="/class/single-class/{{_id}}">see class details</a> --}}
+            </div>
+
+
+    {{/each}}

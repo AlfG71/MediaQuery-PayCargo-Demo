@@ -6,7 +6,7 @@ const Class = require('../models/Class');
 
 const { isLoggedIn } = require('../middleware/route-guard');
 
-const canEdit = require('../middleware/canEdit');
+// const canEdit = require('../middleware/canEdit');
 
 const isAuthor = require('../middleware/isAuthor');
 
@@ -33,6 +33,42 @@ router.post('/new/:classID', isLoggedIn, (req, res, next) => {
     console.log(err)
     next(err)
   })
+})
+
+router.post('/edit/:commentId/:classId', isLoggedIn, (req, res, next) => {
+
+  Comment.findByIdAndUpdate(
+    req.params.commentId,
+    {
+      comment: req.body.comment
+    },
+    {new: true}
+  )
+  .then((updatedComment) => {
+    console.log("Updated comment", updatedComment)
+    res.redirect(`/class/single-class/${req.params.classId}`)
+
+  })
+  .catch((err) => {
+    console.log(err)
+    next(err)
+  })
+
+
+})
+
+router.post("/delete/:commentId/:classId", isLoggedIn, (req, res, next) => {
+
+    Comment.findByIdAndRemove(req.params.commentId)
+    .then((deleted) => {
+      console.log("Deleted comment:", deleted)
+      res.redirect(`/class/single-class/${req.params.classId}`)
+    })
+    .catch((err) => {
+      console.log(err)
+      next(err)
+    })
+
 })
 
 //COPIED
