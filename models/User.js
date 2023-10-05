@@ -15,6 +15,10 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required."],
     },
+    imageurl: {
+      type: String,
+      default: 'https://cvhrma.org/wp-content/uploads/2015/07/default-profile-photo.jpg'
+    }
   },
   {
     timestamps: true,
