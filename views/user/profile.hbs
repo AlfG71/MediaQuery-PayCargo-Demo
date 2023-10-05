@@ -1,4 +1,3 @@
-
 {{#if user}}
 
 <h2>{{user.fullName}}'s Profile</h2>
@@ -29,16 +28,17 @@
 </form>
 
 <br>
+{{!-- <form action="/class/all-classes" method="POST">
+</form> --}}
+
 <form action="/user/profile/delete" method="POST">
   <button onclick="window.prompt("Are you sure?")" type="submit">Delete account</button>
 </form>
 <form action="" method="POST">
   <button onclick="deletePrompt()" type="submit">Check account</button>
 </form>
-{{!-- <form action="/class/all-classes" method="POST">
-</form> --}}
 
 
 {{else}}
   <p>Still no logged in user, sorry!</p>
-{{/if}} 
+{{/if}}
