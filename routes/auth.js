@@ -118,10 +118,10 @@ router.get('/profile', (req, res, next) => {
 
 //LOGOUT PAGE
 router.post('/logout', (req, res, next) => {
-  // req.session.destroy(err => {
-    // if (err) next(err);
+  req.session.destroy(err => {
+    if (err) next(err);
     res.redirect('/');
-  // });
+  });
 });
 
 // router.post('/update', (req, res, next) => { // unfinished request

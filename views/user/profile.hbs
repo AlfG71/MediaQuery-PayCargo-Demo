@@ -1,15 +1,18 @@
-
 {{#if user}}
-  
-  {{!-- <img> --}}
-
 
 <h2>{{user.fullName}}'s Profile</h2>
 
-<form action="/user/profile/edit" method="POST">
-  <label> Full Name
-      <input type="text" name="fullName" value={{user.fullName}} />
+<form action="/user/profile/edit" method="POST" enctype="multipart/form-data">
+
+    <label> Full name
+      <input type="text" name="fullName" value="{{user.fullName}}" />
     </label>
+
+    <label> Profile picture
+      <input type="file" name="imageurl" />
+    </label>
+
+    <img src={{user.imageurl}} alt="user">
 
     <label> Email
       <input type="text" name="email" value={{user.email}} />
@@ -19,14 +22,13 @@
       <input type="password" name="password" value={{user.password}} />
     </label>
 
-<br>
-<form action="/class/all-classes" method="POST">
-  <button>Confirm changes</button>
+  <button type="submit">Confirm changes</button>
 </form>
 
-<form action="/user/profile/delete" method="POST">
-  <button>Delete account</button>
+<form action="/user/profile/delete" method="GET">
+  <button type="submit">Delete account</button>
 </form>
+
 
 
 {{else}}
@@ -34,27 +36,28 @@
 {{/if}}
 
 
+{{!-- <form action="/user/profile/delete" method="POST">
+  <button onclick="window.prompt("Are you sure?")" type="submit">Delete account</button>
+</form>
+<form action="" method="POST">
+  <button onclick="deletePrompt()" type="submit">Check account</button>
+</form> --}}
 
-{{!-- Placeholder for profile picture
-Add profile picture
-Name
-Email
-Password
-Update
-Delete
-Edit
+{{!-- <button onclick="Function()" id="test">send value</button>
+
+<p id="demo"></p>
+
+<script>
+function Function() {
+    var txt;
+    var text = prompt("Please enter text:", "example text");
+    if (text == null || text == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Your text is: " + text;
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
  --}}
 
-  {{!-- <button>
-    <a href="">Change picture</a>
-  </button>
-  <button>
-    <a href="">Change name</a>
-  </button> --}}
-
-  {{!-- <button>
-    <a href="/user/update-profile">Change email</a>
-  </button>
-  <button>
-    <a href="/user/update-profile">Change password</a>
-  </button> --}}

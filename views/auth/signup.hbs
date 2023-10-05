@@ -1,17 +1,26 @@
+{{!-- Login page is the home/index page --}}
+
 <div id="form">
-  <h2>Signup</h2>
+  <p class="name">PayCargo Acadamy</p>
+  <h2>First access?</h2>
+
   <form action="/auth/signup" method="POST">
-    <label> Full Name
-      <input type="text" name="fullName" placeholder="Jane Smith" />
-    </label>
 
-    <label> Email
-      <input type="text" name="email" placeholder="rockstar@ironhack.com" />
-    </label>
+    <div class="input-wrapper">
+    <label>Full Name</label>
+    <input type="text" name="fullName" placeholder="Jane Smith" />
+</div>
 
-    <label> Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+<div class="input-wrapper">
+    <label>Email</label>
+    <input type="text" name="email" placeholder="rockstar@ironhack.com" />
+</div>
+
+<div class="input-wrapper">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="********" />
+</div>
+
 
     <button type="submit">Create account</button>
 
@@ -21,3 +30,4 @@
 
   </form>
 </div>
+

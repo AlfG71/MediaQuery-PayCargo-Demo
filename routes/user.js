@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const fileUploader = require('../config/cloudinary.config');
 
-const User = require('../models/User')
+const User = require("../models/User")
 
 //const { isLoggedIn } = require('../middleware/route-guard')
 
@@ -27,20 +28,29 @@ router.post('/profile/edit', (req, res, next) => {
   });
 
 //DELETE PROFILE
+router.get('/profile/delete', (req, res, next) => {
+    
+  res.render('user/delete.hbs')
+
+})
+
 router.post('/profile/delete', (req, res, next) => { 
+
+  if(req.body.delete === 'delete'){
+
   const userID = req.session.user._id
-  const { fullName, email, password } = req.body
+  const { fullName, email, password } = req.body 
 
   User.findByIdAndDelete(userID, { fullName, email, password }, {new: true})
   .then((deletedProfile) => {
     if(userID) {
       req.session.user = deletedProfile
-      alert("Sorry to see you go!")
+      // alert("Sorry to see you go!")
       res.redirect("/")
     } 
     })
     .catch(error => next(error))    
-  })
+  }})
 
 
 

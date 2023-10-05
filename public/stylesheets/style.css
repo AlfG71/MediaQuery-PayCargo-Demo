@@ -24,3 +24,79 @@ a {
   height: auto; /* Maintains the image's aspect ratio */
 }
 
+.name{
+  color: black;
+}
+body{
+  background: linear-gradient(126deg, #473BF0 18.73%, #0094D9 43.27%);
+}
+
+.input-wrapper {
+  display: grid;
+  gap: 5px; /* Spacing between the label and input */
+}
+
+label {
+  justify-self: baseline; /* Aligns the label to the right of its cell */
+  grid-row: 1; /* Ensures the label is in the first row */
+}
+
+input {
+  height: 35px;
+  width: 320px;
+  border-radius: 6px;
+  grid-row: 7; /* Ensures the input field is in the second row */
+}
+
+
+
+#form {
+  width: 35%;
+  margin-left: 15px;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
+}
+
+#form h2 {
+  margin-bottom: 20px;
+}
+
+#form label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+#form input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+#form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  margin-top: 15px;
+}
+
+#form a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#form h4 {
+  margin: 0;
+}
+img{
+  height: 30vh;
+  border-radius: 40%;
+}
+
+
+
