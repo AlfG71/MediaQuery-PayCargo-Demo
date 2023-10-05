@@ -1,16 +1,17 @@
 <h2>Are you sure you want to delete your account?</h2>
 
 <form action="/user/profile/delete" method="POST">
-  <label>
-    Type "delete" to confirm
-    <input type="text" />
+  <label for="confirmation">Type "delete" in lowercase to confirm
+  <input type="text" name="delete" />
   </label>
+  <button type="submit">Delete account</button>
 </form>
-<br>
+
+{{!-- <br>
 <form action="/user/profile/edit" method="POST">
   <button>Cancel</button>
 </form>
 
 <form action="/user/profile/delete" method="POST">
   <button>Delete account</button>
-</form>
+</form> --}}

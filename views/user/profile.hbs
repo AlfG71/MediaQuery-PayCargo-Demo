@@ -8,8 +8,6 @@
       <input type="text" name="fullName" value="{{user.fullName}}" />
     </label>
 
-
-
     <label> Profile picture
       <input type="file" name="imageurl" />
     </label>
@@ -27,16 +25,10 @@
   <button type="submit">Confirm changes</button>
 </form>
 
-<br>
-{{!-- <form action="/class/all-classes" method="POST">
-</form> --}}
+<form action="/user/profile/delete" method="GET">
+  <button type="submit">Delete account</button>
+</form>
 
-<form action="/user/profile/delete" method="POST">
-  <button onclick="window.prompt("Are you sure?")" type="submit">Delete account</button>
-</form>
-<form action="" method="POST">
-  <button onclick="deletePrompt()" type="submit">Check account</button>
-</form>
 
 
 {{else}}
