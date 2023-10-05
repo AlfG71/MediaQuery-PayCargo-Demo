@@ -7,6 +7,10 @@
   <button type="submit">Delete account</button>
 </form>
 
+{{#if errorMessage}}
+  <p>{{errorMessage}}</p>
+{{/if}}
+
 {{!-- <br>
 <form action="/user/profile/edit" method="POST">
   <button>Cancel</button>

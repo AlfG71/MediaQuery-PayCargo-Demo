@@ -16,31 +16,31 @@ const classes = [
       title: "How to Create a Cash Flow Forecast (in under 20 minutes)",
       videoCreator: "Clara CFO Group",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519647/mediaquery-project/Cash_Flow_igagww.png",
-      videoURL: "https://www.youtube.com/watch?v=0BGanYasxn8",
+      videoURL: "https://www.youtube.com/watch?v=0BGanYasxn8"
     },
     {
       title: "How to Manage Your Cash Flow",
       videoCreator: "Dan Lok",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696524702/mediaquery-project/Financial_Ethics_fvzfyr.png",
-      videoURL: "https://www.youtube.com/watch?v=Vn3RBKfPEt8",
+      videoURL: "https://www.youtube.com/watch?v=Vn3RBKfPEt8"
     },
     {
       title: "Cash Flow vs. Profit",
       videoCreator: "LYFE Accounting",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696524802/mediaquery-project/blockchain_1_hxsmsi.png",
-      videoURL: "https://www.youtube.com/watch?v=8RxYSUEnVXQ",
+      videoURL: "https://www.youtube.com/watch?v=8RxYSUEnVXQ"
     },
     {
       title: "How To Deal With Cash Flow Problems",
       videoCreator: "Grow By Joe",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519717/mediaquery-project/Investment_er0n4v.png",
-      videoURL: "https://www.youtube.com/watch?v=b3cfvVMCG9E",
+      videoURL: "https://www.youtube.com/watch?v=b3cfvVMCG9E"
     },
     {
       title: "10 Cash Flow Drivers",
       videoCreator: "RareBrain",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519511/mediaquery-project/Case_Studies_fkypzy.png",
-      videoURL: "https://www.youtube.com/watch?v=TzVcUwXPVM4",
+      videoURL: "https://www.youtube.com/watch?v=TzVcUwXPVM4"
     }
 
 ]

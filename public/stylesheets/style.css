@@ -7,7 +7,7 @@ body {
 
 a {
   background: linear-gradient(126deg, #544bd5 30.73%, #0094D9 86.27%);
-  
+
 }
 
 #grid-container {
@@ -29,6 +29,7 @@ a {
 .name{
   color: black;
 }
+
 body{
   background: linear-gradient(126deg, #473BF0 30.73%, #0094D9 55.27%);
 }
@@ -48,7 +49,7 @@ input {
   width: 320px;
   border-radius: 6px;
   grid-row: 2; /* Ensures the input field is in the second row */
-  
+
 }
 
 
@@ -66,8 +67,12 @@ input {
 }
 
 #form label {
-  display: block;
+  /* display: block; */
   margin-bottom: 15px;
+}
+
+img {
+height: 20vh
 }
 
 #form input {
@@ -105,7 +110,7 @@ input {
   position: fixed;
   left: 50%;
   top: 0;
- 
+
 }
 .home-img{
   object-fit: contain;
@@ -155,7 +160,7 @@ input {
 
 
 
- 
+
 
 
 

@@ -34,7 +34,7 @@ router.get('/all-classes', isLoggedIn, (req, res, next) => {
 
 router.post('/single-class/:classID', isLoggedIn, (req, res, next) => {
 
-    console.log("User in session", req.session.user)
+    // console.log("User in session", req.session.user)
 
     Class.findById(req.params.classID)
     .populate({
@@ -45,7 +45,7 @@ router.post('/single-class/:classID', isLoggedIn, (req, res, next) => {
         console.log("foundClass before MAP ===>", foundClass)
 
         let comments = foundClass.comments.map((comment) => {
-            console.log("This is comment", comment)
+            // console.log("This is comment", comment)
 
 
             if (req.session.user._id === String(comment.author._id)) {
@@ -56,7 +56,7 @@ router.post('/single-class/:classID', isLoggedIn, (req, res, next) => {
             }
         });
 
-        console.log("COMMENTS after MAP ===>", comments)
+        // console.log("COMMENTS after MAP ===>", comments)
         res.render('class/single-class.hbs', {foundClass, comments})
     })
     .catch((err) => {
