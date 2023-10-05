@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var hbs = require('hbs')
+
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo');
@@ -19,6 +21,11 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerHelper('deletePrompt', () => {
+  console.log("Hitting BUTTON ************")
+window.prompt("Are you sure?")
+})
 
 
 app.set('trust proxy', 1);

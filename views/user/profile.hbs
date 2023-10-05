@@ -1,36 +1,42 @@
-
 {{#if user}}
-  <h2>Your Profile</h2>
-  <hr>
 
-  <h4>{{user.fullName}} </h4>
-  <img src={{user.imageurl}} alt="user">
+<h2>{{user.fullName}}'s Profile</h2>
 
-{{!-- <button onclick="nameFunction()">Change name</button>
+<form action="/user/profile/edit" method="POST" enctype="multipart/form-data">
 
-<script>
-function nameFunction() {
-    let newFirstName = prompt("First name:")
-    let newLastName = prompt("Last name:");
-}
-</script> --}}
-
-<hr>
-
-<h4>Login Details</h4>
-<p>Your email is: {{user.email}}</p>
+    <label> Full name
+      <input type="text" name="fullName" value="{{user.fullName}}" />
+    </label>
 
 
 
-<hr>
+    <label> Profile picture
+      <input type="file" name="imageurl" />
+    </label>
+
+    <img src={{user.imageurl}} alt="user">
+
+    <label> Email
+      <input type="text" name="email" value={{user.email}} />
+    </label>
+
+    <label> Password
+      <input type="password" name="password" value={{user.password}} />
+    </label>
+
+  <button type="submit">Confirm changes</button>
+</form>
+
 <br>
-  {{!-- <button>
-    <a href="/class/all-classes">Confirm changes</a>
-  </button> --}}
-<a href="/user/update-profile">edit profile</a>
-  {{!-- <button>
-    <a href="">Delete account</a>
-  </button> --}}
+{{!-- <form action="/class/all-classes" method="POST">
+</form> --}}
+
+<form action="/user/profile/delete" method="POST">
+  <button onclick="window.prompt("Are you sure?")" type="submit">Delete account</button>
+</form>
+<form action="" method="POST">
+  <button onclick="deletePrompt()" type="submit">Check account</button>
+</form>
 
 
 {{else}}
@@ -39,26 +45,21 @@ function nameFunction() {
 
 
 
-{{!-- Placeholder for profile picture
-Add profile picture
-Name
-Email
-Password
-Update
-Delete
-Edit
+{{!-- <button onclick="Function()" id="test">send value</button>
+
+<p id="demo"></p>
+
+<script>
+function Function() {
+    var txt;
+    var text = prompt("Please enter text:", "example text");
+    if (text == null || text == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Your text is: " + text;
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
  --}}
 
-  {{!-- <button>
-    <a href="">Change picture</a>
-  </button>
-  <button>
-    <a href="">Change name</a>
-  </button> --}}
-
-  {{!-- <button>
-    <a href="/user/update-profile">Change email</a>
-  </button>
-  <button>
-    <a href="/user/update-profile">Change password</a>
-  </button> --}}

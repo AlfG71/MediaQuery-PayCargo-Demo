@@ -1,9 +1,9 @@
-<h2>{{title}}</h2>
+<h2>{{foundClass.title}}</h2>
 
-{{videoURL}}
+{{foundClass.videoURL}}
 
 <h3>Learn by sharing</h3>
-<form id="comment" action="/comment/new/{{_id}}" method="post">
+<form id="comment" action="/comment/new/{{foundClass._id}}" method="post">
     <input type="text" name="comment" id="comment">
     <button type="submit">Publish Comment</button>
 </form>
@@ -12,8 +12,31 @@
 {{#if comments}}
 
     {{#each comments}}
-        <p>{{comment}}</p>
-        <h6>{{author.fullName}}</h6>
+
+        {{#if canEdit}}
+
+        <!--  NEW code to edit by the comment author -->
+
+            {{!-- <a href="/edit/comment/{{_id}}">Edit Comment</a> --}}
+
+            <form action="/comment/edit/{{_id}}/{{classId}}" method="post">
+            {{!-- <label for="">
+                Comment --}}
+                <input type="text" name="comment" value="{{comment}}">
+            {{!-- </label> --}}
+                <button type="submit">Edit comment</button>
+            </form>
+
+            <form action="/comment/delete/{{_id}}/{{classId}}" method="post">
+                <button type="submit">Delete Comment</button>
+            </form>
+
+        {{else}}
+
+            <p>{{comment}}</p>
+            <h6>{{author.fullName}}</h6>
+
+        {{/if}}
 
     {{/each}}
 
