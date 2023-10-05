@@ -1,18 +1,23 @@
-<img class="all-classes-paycargo-img" src ="https://res.cloudinary.com/deepjfoly/image/upload/v1696528906/mediaquery-project/PayCargo_Logo_-_Grey_qlfooy.svg">
+<h2>All Classes</h2>
 
-<a href="/profile"><img class="all-classes-home-img" src="https://res.cloudinary.com/deepjfoly/image/upload/v1696529367/mediaquery-project/Account_Button_khj592.svg"></a>
-
-
-<h2 class="h2classes">Welcome to PayCargo Academy</h2>
-<h3 class="h3classes">We're here to support you with financial knowledge. Our platform is dedicated to helping our valued partners, like you, succeed in the world of finance. Explore articles, guides, and courses tailored to your needs. Your success is our success. Let's learn and thrive together with PayCargo's Academy!</h3>
-<div class="class-container">
     {{#each classes}}
-        <div class="class-div">
-            <img class="class-video-img" src={{videoImg}} alt="video image">
+
+        <div>
+
+
             <h3>{{title}}</h3>
-            <form action="/class/single-class/{{id}}" method="POST">
-                <button class="all-classes-buttons" type="submit">Learn</button>
+            {{!-- <img src="" alt=""> --}}
+            <h2>{{videoImg}}</h2>
+            <img src='https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2021-04/istockphoto-1210929329-crop.jpg' alt="class">
+            <form action="/class/single-class/{{_id}}" method="POST">
+                <button type="submit">Learn</button>
             </form>
-        </div>
+
+            <div id="grid-container"></div>
+
+
+            {{!-- <a href="/class/single-class/{{_id}}">see class details</a> --}}
+            </div>
+
+
     {{/each}}
-</div>
