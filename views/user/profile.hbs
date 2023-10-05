@@ -1,64 +1,27 @@
-
 {{#if user}}
-  <h2>Your Profile</h2>
-  <hr>
+  {{!-- <img> --}}
+<h2>{{user.fullName}}'s Profile</h2>
+<form action="/user/profile/edit" method="POST">
+  <label> Full Name
+      <input type="text" name="fullName" value={{user.fullName}} />
+    </label>
+    <label> Email
+      <input type="text" name="email" value={{user.email}} />
+    </label>
 
-  <h4>{{user.fullName}} </h4>
-  <img src={{user.imageurl}} alt="user">
-
-{{!-- <button onclick="nameFunction()">Change name</button>
-
-<script>
-function nameFunction() {
-    let newFirstName = prompt("First name:")
-    let newLastName = prompt("Last name:");
-}
-</script> --}}
-
-<hr>
-
-<h4>Login Details</h4>
-<p>Your email is: {{user.email}}</p>
-
-
-
-<hr>
+    <label>change email
+      <input type="text">
+    </label>
+    <label> Password
+      <input type="password" name="password" value={{user.password}} />
+    </label>
 <br>
-  {{!-- <button>
-    <a href="/class/all-classes">Confirm changes</a>
-  </button> --}}
-<a href="/user/update-profile">edit profile</a>
-  {{!-- <button>
-    <a href="">Delete account</a>
-  </button> --}}
-
-
+<form action="/class/all-classes" method="POST">
+  <button>Confirm changes</button>
+</form>
+<form action="/user/profile/delete" method="POST">
+  <button>Delete account</button>
+</form>
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
-
-
-
-{{!-- Placeholder for profile picture
-Add profile picture
-Name
-Email
-Password
-Update
-Delete
-Edit
- --}}
-
-  {{!-- <button>
-    <a href="">Change picture</a>
-  </button>
-  <button>
-    <a href="">Change name</a>
-  </button> --}}
-
-  {{!-- <button>
-    <a href="/user/update-profile">Change email</a>
-  </button>
-  <button>
-    <a href="/user/update-profile">Change password</a>
-  </button> --}}
