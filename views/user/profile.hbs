@@ -1,51 +1,32 @@
 
 {{#if user}}
-  <h2>Your Profile</h2>
-  <hr>
+  
+  {{!-- <img> --}}
 
-  <h4>{{user.firstName}} {{user.lastName}}</h4>
-  <img>
 
-<button onclick="nameFunction()">Change name</button>
+<h2>{{user.fullName}}'s Profile</h2>
 
-<script>
-function nameFunction() {
-    let newFirstName = prompt("First name:")
-    let newLastName = prompt("Last name:");
-}
-</script>
+<form action="/user/profile/edit" method="POST">
+  <label> Full Name
+      <input type="text" name="fullName" value={{user.fullName}} />
+    </label>
 
-<hr>
+    <label> Email
+      <input type="text" name="email" value={{user.email}} />
+    </label>
 
-<h4>Login Details</h4>
-<p>Your email is: {{user.email}}</p>
+    <label> Password
+      <input type="password" name="password" value={{user.password}} />
+    </label>
 
-<button onclick="emailFunction()">Change email</button>
-
-<script>
-function emailFunction() {
-    let newEmail = prompt("Please enter new email:")
-    console.log("This is sesssion ==>", req.session)
-    {{!-- user.email = newEmail  --}}
-}
-</script>
-
-<button onclick="passwordFunction()">Change password</button>
-<script>
-function passwordFunction() {
-    let newPassword = prompt("Please enter new password:")
-}
-</script>
-
-<hr>
 <br>
-  <button>
-    <a href="/class/all-classes">Confirm changes</a>
-  </button>
+<form action="/class/all-classes" method="POST">
+  <button>Confirm changes</button>
+</form>
 
-  <button>
-    <a href="">Delete account</a>
-  </button>
+<form action="/user/profile/delete" method="POST">
+  <button>Delete account</button>
+</form>
 
 
 {{else}}
