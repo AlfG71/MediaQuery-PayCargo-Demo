@@ -284,13 +284,12 @@ background: url(), lightgray 50% / cover no-repeat;
   align-items: flex-start;
   gap: 3px;
   flex-shrink: 0;
-
   color: #000;
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal; */
+  line-height: normal;
 }
 
 .profile-input-field {
@@ -303,7 +302,6 @@ background: url(), lightgray 50% / cover no-repeat;
   border-radius: 6px;
   border: 0.5px solid #000;
   background: #FFF;
-
   color: #000;
   font-family: Arial;
   font-size: 16px;
