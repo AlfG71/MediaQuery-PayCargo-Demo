@@ -1,35 +1,44 @@
-{{#if user}}
-<h2>{{user.fullName}}'s Profile</h2>
+<div class="profile-body">
+  {{#if user}}
 
-<form action="/user/profile/edit" method="POST" enctype="multipart/form-data">
+<div class="profile-container">
 
-    <label> Full name
-      <input type="text" name="fullName" value="{{user.fullName}}" />
-    </label>
+    <div class="profile-name-and-picture">
 
-    <label for="imageurl"> Profile picture</label>
+      <img class="profile-picture" src={{user.imageurl}} alt="user">
+
+      <h2 class="profile-user-name">{{user.fullName}}'s Profile</h2>
+
+    </div>
+
+    <label for="imageurl"> Edit picture</label>
     <input type="file" name="imageurl" id="imageurl" />
 
+    <form class="profile-form" action="/user/profile/edit" method="POST" enctype="multipart/form-data">
 
-    <img src={{user.imageurl}} alt="user">
+      <label class="profile-label"> Full name
+        <input class="profile-input-field" type="text" name="fullName" value="{{user.fullName}}" />
+      </label>
 
-    <label> Email
-      <input type="text" name="email" value={{user.email}} />
-    </label>
+      <label class="profile-label"> Email
+        <input class="profile-input-field" type="text" name="email" value={{user.email}} />
+      </label>
 
-    <label> Password
-      <input type="password" name="password" value={{user.password}} />
-    </label>
+      <label class="profile-label"> Password
+        <input class="profile-input-field" type="password" name="password" value={{user.password}} />
+      </label>
 
-  <button type="submit">Confirm changes</button>
-</form>
+      <button class="profile-confirm-changes-button" type="submit">Confirm changes</button>
 
-<form action="/user/profile/delete" method="GET">
-  <button type="submit">Delete account</button>
-</form>
+    </form>
 
+      <form action="/user/profile/delete" method="GET">
+        <button class="profile-delete-button" type="submit">Delete account</button>
+      </form>
 
+  </div>
 
-{{else}}
+  {{else}}
   <p>Still no logged in user, sorry!</p>
-{{/if}}
+  {{/if}}
+</div>
