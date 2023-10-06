@@ -1,27 +1,35 @@
 {{#if user}}
-  {{!-- <img> --}}
 <h2>{{user.fullName}}'s Profile</h2>
-<form action="/user/profile/edit" method="POST">
-  <label> Full Name
-      <input type="text" name="fullName" value={{user.fullName}} />
+
+<form action="/user/profile/edit" method="POST" enctype="multipart/form-data">
+
+    <label> Full name
+      <input type="text" name="fullName" value="{{user.fullName}}" />
     </label>
+
+    <label for="imageurl"> Profile picture</label>
+    <input type="file" name="imageurl" id="imageurl" />
+
+
+    <img src={{user.imageurl}} alt="user">
+
     <label> Email
       <input type="text" name="email" value={{user.email}} />
     </label>
 
-    <label>change email
-      <input type="text">
-    </label>
     <label> Password
       <input type="password" name="password" value={{user.password}} />
     </label>
-<br>
-<form action="/class/all-classes" method="POST">
-  <button>Confirm changes</button>
+
+  <button type="submit">Confirm changes</button>
 </form>
-<form action="/user/profile/delete" method="POST">
-  <button>Delete account</button>
+
+<form action="/user/profile/delete" method="GET">
+  <button type="submit">Delete account</button>
 </form>
+
+
+
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
