@@ -417,3 +417,29 @@ background: url(), lightgray 50% / cover no-repeat;
   font-weight: 700;
   line-height: normal;
 }
+.profileheader{
+  display: flex;
+width: 1440px;
+height: 122px;
+padding: 0px 28px;
+align-items: center;
+gap: 407px;
+flex-shrink: 0;
+border: 2px solid black;
+background-color: blue;
+}
+
+.profileheaderimg{
+  border: 2px solid red;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+.h2text{
+  font-family: Quicksand;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+color: var(--white-90, rgba(255, 255, 255, 0.90));
+}
