@@ -121,7 +121,6 @@ height: 20vh
   width: 100%;
 }
 .class-div{
-  border: 1px solid rgb(0, 0, 0);
   background-color: rgb(198, 185, 185);
   border-radius: 10px;
   height: 170px;
@@ -157,7 +156,59 @@ height: 20vh
   top: 4%;
   left: 92%;
 }
+.class-video-img{
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+}
+.class-div{
+  background-color: rgb(198, 185, 185);
+  border-radius: 10px;
+  height: 170px;
+  width: 190px;
+}
+.class-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 10px;
+  height: 170px;
+  width: 190px;
+  gap: 20px;
+  margin-left: 330px;
+  position: relative;
+}
+.h2classes{
+  color: white;
+  margin-left: 360px;
+  font-size: 35px;
+  margin-top: -60px;
+}
+.h3classes{
+  color: white;
+  margin-left: 200px;
+}
 
+.all-classes-paycargo-img{
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+.all-classes-home-img{
+  position: fixed;
+  top: 4%;
+  left: 92%;
+}
+.all-classes-buttons{
+  
+  border-radius: 10px;
+  border: 2px solid blue;
+}
+
+.class-title{
+  height: 30%;
+
+}
 
 
 
