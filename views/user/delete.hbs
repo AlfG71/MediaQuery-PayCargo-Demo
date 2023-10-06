@@ -1,21 +1,22 @@
-<h2>Are you sure you want to delete your account?</h2>
+<div class="delete-body"></div>
 
-<form action="/user/profile/delete" method="POST">
-  <label for="confirmation">Type "delete" in lowercase to confirm
-  <input type="text" name="delete" />
-  </label>
-  <button type="submit">Delete account</button>
-</form>
+ <div class="profile-container">
 
-{{#if errorMessage}}
-  <p>{{errorMessage}}</p>
-{{/if}}
+    <h2 class="delete-account-question-text">Are you sure you want to delete your account?</h2>
 
-{{!-- <br>
-<form action="/user/profile/edit" method="POST">
-  <button>Cancel</button>
-</form>
+    <form action="/user/profile/delete" method="POST">
 
-<form action="/user/profile/delete" method="POST">
-  <button>Delete account</button>
-</form> --}}
+      <label class="delete-confirm-text" for="confirmation">Type <b>"delete"</b> in lowercase to confirm
+        <input class="delete-input-field" type="text" name="delete" />
+      </label>
+
+      <button class="delete-account-button" type="submit">Delete account</button>
+
+    </form>
+
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
+
+</div>
