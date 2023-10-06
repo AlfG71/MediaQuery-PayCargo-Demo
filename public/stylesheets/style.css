@@ -210,9 +210,116 @@ height: 20vh
 
 }
 
+.singclasspage {
+  background-color: #fff;
+}
+
+.singclasspage .singtitlevideo{
+  display: flex;
+  width: 1440px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singtitlevideo h2{
+  width: 1170px;
+  height: 87px;
+  color: #000;
+  font-family: Quicksand;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.singtitlevideo video{
+  display: flex;
+  width: 753px;
+  height: 444px;
+  padding: 402px 16px 18px 713px;
+  justify-content: flex-end;
+  align-items: center;
+}
 
 
+.singclasspage h3{
+  display: flex;
+  padding: 8px 958px 8px 0px;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  color: #000000
+}
 
+.commentframe{
+  display: flex;
+  height: 206px;
+  padding: 10px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: #FFF;
+}
 
+.commentframe .name{
+  display: flex;
+  padding: 11px 8px 8px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 10px 10px 0px 0px;
+  background: rgba(57, 77, 255, 0.30);
+  width: 1040px;
+  height: 20px
+}
 
+.commentframe .comment{
+  display: flex;
+  padding: 14px 13px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  border: 8px solid rgba(57, 77, 255, 0.30);
+  background: #FFF;
+  width: 1030px;
+  height: 47px
+}
 
+.commentframe .publish{
+  display: flex;
+  width: 1056px;
+  padding: 13px 8px 14px 321px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 8px;
+  border-radius: 0px 0px 10px 10px;
+  background: rgba(57, 77, 255, 0.30);
+}
+
+#comment{
+  width: 1030px;
+  height: 47px
+}
+
+#comment button{
+  display: flex;
+  width: 157px;
+  height: 45px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 45px;
+  background: var(--secondary-palatinate-blue, #473BF0);
+  color: #FFF;
+  font-family: Quicksand;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

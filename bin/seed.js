@@ -10,37 +10,37 @@ const classes = [
       title: "Cash Flow Statement Basics Explained",
       videoCreator: "Leila Gharani",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519628/mediaquery-project/Software_and_tools_rcauzv.png",
-      videoURL: "https://www.youtube.com/watch?v=hMBN6yTIDb0"
+      videoURL: "https://www.youtube.com/embed/hMBN6yTIDb0?si=0u0kAG6Pp2V3zZGc"
     },
     {
       title: "How to Create a Cash Flow Forecast (in under 20 minutes)",
       videoCreator: "Clara CFO Group",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519647/mediaquery-project/Cash_Flow_igagww.png",
-      videoURL: "https://www.youtube.com/watch?v=0BGanYasxn8"
+      videoURL: "https://www.youtube.com/embed/0BGanYasxn8?si=DWRllc7cXJuWl1d_"
     },
     {
       title: "How to Manage Your Cash Flow",
       videoCreator: "Dan Lok",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696524702/mediaquery-project/Financial_Ethics_fvzfyr.png",
-      videoURL: "https://www.youtube.com/watch?v=Vn3RBKfPEt8"
+      videoURL: "https://www.youtube.com/embed/Vn3RBKfPEt8?si=hNLN-tK_JkiLoTXG"
     },
     {
       title: "Cash Flow vs. Profit",
       videoCreator: "LYFE Accounting",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696524802/mediaquery-project/blockchain_1_hxsmsi.png",
-      videoURL: "https://www.youtube.com/watch?v=8RxYSUEnVXQ"
+      videoURL: "https://www.youtube.com/embed/lkEtgnhsV04?si=Ldug9_vaYYIj7eGS"
     },
     {
       title: "How To Deal With Cash Flow Problems",
       videoCreator: "Grow By Joe",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519717/mediaquery-project/Investment_er0n4v.png",
-      videoURL: "https://www.youtube.com/watch?v=b3cfvVMCG9E"
+      videoURL: "https://www.youtube.com/embed/b3cfvVMCG9E?si=haay7l3zDiFnzqrk"
     },
     {
       title: "10 Cash Flow Drivers",
       videoCreator: "RareBrain",
       videoImg: "https://res.cloudinary.com/deepjfoly/image/upload/v1696519511/mediaquery-project/Case_Studies_fkypzy.png",
-      videoURL: "https://www.youtube.com/watch?v=TzVcUwXPVM4"
+      videoURL: "https://www.youtube.com/embed/TzVcUwXPVM4?si=AFb7UiVqqgB0Su18"
     }
 
 ]

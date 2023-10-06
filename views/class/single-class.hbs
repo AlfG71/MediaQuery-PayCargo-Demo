@@ -1,15 +1,29 @@
-<h2>{{foundClass.title}}</h2>
+<div class="singclasspage">
 
-<video>
-    <source src = {{foundClass.videoURL}} type="video">
-</video>
+<div class="singtitlevideo">
+    <h2 class="singclasstitle">{{foundClass.title}}</h2>
+
+    <iframe width="560" height="315" src="{{foundClass.videoURL}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>
 
 <h3>Learn by sharing</h3>
-<form id="comment" action="/comment/new/{{foundClass._id}}" method="post">
-    <input type="text" name="comment" id="comment">
-    <button type="submit">Publish Comment</button>
-</form>
+<br>
 
+<div class="commentframe">
+        
+    <div class = "name">{{user.fullName}}</div>
+        <div class = "comment">
+            <form id="comment" action="/comment/new/{{foundClass._id}}" method="post">
+                <input type="text" name="comment" placeholder="comment">
+                </form>
+        </div>
+        
+    <div class = "publish">
+        <button type="submit">Publish Comment</button>
+    </div>
+
+</div>
 
 {{#if comments}}
 
@@ -44,58 +58,4 @@
 
 {{/if}}
 
-{{!-- {{#if comments}}
-<a href="/edit/comment"></a>
-
-{{/if}} --}}
-
-{{!-- edit button will appear only if they are a comment author --}}
-
-<!--
-    <div>
-
-        <h3>{{room.name}}</h3>
-        <img src={{room.imageUrl}} alt="room">
-        <p>{{room.description}}</p>
-        <p>added by: {{room.owner.fullName}}</p>
-
-        {{#if canEdit}}
-
-            <a href="/rooms/edit/{{room._id}}">Edit Room</a>
-            <a href="/rooms/delete/{{room._id}}">Delete Room</a>
-
-        {{/if}}
-
-        <a href="/rooms/all">Back to All Rooms</a>
-
-        <hr>
-
-        {{#unless canEdit}}
-
-            <h4>Leave a review</h4>
-            <form id="review" action="/reviews/new/{{room._id}}" method="post">
-                <label for="review">Review:</label>
-                <input type="text" name="comment" id="review">
-                <button type="submit">Submit Review</button>
-            </form>
-
-        {{/unless}}
-
-
-        {{#if reviews}}
-
-            {{#each reviews}}
-
-                <p>{{comment}}</p>
-                <h6>- {{user.fullName}}</h6>
-
-            {{/each}}
-
-            {{else}}
-
-            <p>No reviews yet</p>
-
-        {{/if}}
-    </div>
-*/
--->
+</div>

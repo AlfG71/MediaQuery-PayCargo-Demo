@@ -22,10 +22,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-hbs.registerHelper('deletePrompt', () => {
-  console.log("Hitting BUTTON ************")
-window.prompt("Are you sure?")
-})
+// hbs.registerHelper('deletePrompt', () => {
+//   console.log("Hitting BUTTON ************")
+// window.prompt("Are you sure?")
+// })
 
 
 app.set('trust proxy', 1);
